@@ -1,0 +1,59 @@
+package Classes;
+import java.util.Scanner;
+
+class AreaOF
+{
+    Scanner sc= new Scanner(System.in);
+    int area=0;
+    void circle()
+    {
+        System.out.println("Enter radius of circle ");
+        int r = sc.nextInt();
+        float area = (float) (r*r*(3.14));
+        System.out.println("Area of circle is "+area);
+    }
+    void square()
+    {
+        System.out.println("Enter the  length of square ");
+        int l = sc.nextInt();
+        area = l*l;
+        System.out.print("Area of square is ");
+
+    }
+    void rectangle()
+    {
+        System.out.println("Enter length and breadth of rectangle  ");
+        int l = sc.nextInt(),b = sc.nextInt();
+        area = l*b;
+        System.out.print("Area of rectangle is ");
+    }
+    void area()
+    {
+        System.out.print("area is "+area);
+    }
+}
+
+public class Area
+{
+    public static void main(String[] args)
+    {
+        AreaOF ao=new AreaOF();
+        Scanner sc= new Scanner(System.in);
+        System.out.println("You can calculate area of circle,rectangle,Square ");
+        String choose=sc.nextLine();
+        switch (choose) {
+            case "circle" -> ao.circle();
+            case "rectangle" -> {
+                ao.rectangle();
+                ao.area();
+            }
+            case "square" -> {
+                ao.square();
+                ao.area();
+            }
+            default -> System.out.println(" Enter a valid shape");
+        }
+
+
+    }
+}
