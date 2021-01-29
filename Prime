@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class NewPrime
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        boolean type = true;
+        System.out.println(" Enter a number ");
+        int num = sc.nextInt();
+        for (int i = 2; i * i <= num; i++)
+        {
+            if (num % i == 0)
+            {
+                type = false;
+                break;
+
+            }
+        }
+        if (!type||num==0||num==1)
+        {
+            System.out.println(num+" is not a prime number");
+        }
+        else if (type)
+        {
+            System.out.println(num+" is a prime number ");
+        }
+
+    }
+}
